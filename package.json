@@ -15,8 +15,7 @@
     "yarn": "~1.9.2"
   },
   "scripts": {
-    "start": "node server.js",
-    "ex1" : "node ./assignment-1/server.js"
+    "start": "node server.js"
   },
   "bugs": {
     "url": "https://github.com/pdr0/nodejs-playground/issues"
