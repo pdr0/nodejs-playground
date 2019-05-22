@@ -1,0 +1,28 @@
+{
+  "name": "nodejs-playground",
+  "version": "1.0.0",
+  "description": "A playground for POCs and continue learning. A place to put in practice the adoption of knowledges and techniques.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pdr0/nodejs-playground.git"
+  },
+  "author": "yo@pedroselas.com",
+  "license": "MIT",
+  "private": false,
+  "engines": {
+    "node": "10.15.3",
+    "yarn": "~1.9.2"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "ex1" : "node ./assignment-1/server.js"
+  },
+  "bugs": {
+    "url": "https://github.com/pdr0/nodejs-playground/issues"
+  },
+  "homepage": "https://github.com/pdr0/nodejs-playground#readme",
+  "keywords": [
+    "nodejs"
+  ]
+}
