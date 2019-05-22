@@ -15,7 +15,7 @@
     "yarn": "~1.9.2"
   },
   "scripts": {
-    "start": "node server.js"
+    "start": "nodemon server.js"
   },
   "bugs": {
     "url": "https://github.com/pdr0/nodejs-playground/issues"
@@ -23,5 +23,8 @@
   "homepage": "https://github.com/pdr0/nodejs-playground#readme",
   "keywords": [
     "nodejs"
-  ]
+  ],
+  "devDependencies": {
+    "nodemon": "^1.19.0"
+  }
 }
