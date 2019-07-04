@@ -2,7 +2,10 @@ const requestHandler = (req, res) => {
     const {url, method} = req;
 
     if (url === '/') {
-        const response = '<html><head><title>Hi there!</title></head><body><h1>I love Node</h1><a href="/users">Users</a><form action="/create-user" method="POST"><input type="text" title="name" name="name" maxlength="100" /><button type="submit">Create User</button></form></body></html>';
+        const response = '<html><head><title>Hi there!</title></head>' +
+            '<body><h1>I love Node</h1><a href="/users">Users</a>' +
+            '<form action="/create-user" method="POST">' +
+            '<input type="text" title="name" name="name" maxlength="100" /><button type="submit">Create User</button></form></body></html>';
         res.write(response);
         return res.end();
     }
