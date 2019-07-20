@@ -7,7 +7,7 @@
     "type": "git",
     "url": "git+https://github.com/pdr0/nodejs-playground.git"
   },
-  "author": "yo@pedroselas.com",
+  "author": "Pedro Selas - yo@pedroselas.com",
   "license": "MIT",
   "private": false,
   "engines": {
