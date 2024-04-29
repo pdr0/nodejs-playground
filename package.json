@@ -11,8 +11,8 @@
   "license": "MIT",
   "private": false,
   "engines": {
-    "node": "10.15.3",
-    "yarn": "~1.9.2"
+    "node": ">=20",
+    "yarn": ">=1.9.2"
   },
   "scripts": {
     "start": "nodemon server.js"
@@ -26,5 +26,8 @@
   ],
   "devDependencies": {
     "nodemon": "^1.19.0"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
   }
 }

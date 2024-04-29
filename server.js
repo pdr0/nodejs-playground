@@ -1,7 +1,28 @@
-const http = require('http');
-const config = require('./config');
-const { handler } = require('./routes');
+const cluster = require('cluster');
 
-const server = http.createServer(handler);
+if (!cluster.isMaster) {
+  const express = require('express');
+  const app = express();
 
-server.listen(config.port, config.host);
+  console.log('Child');
+
+  const doSomething = (duration) => {
+    const start = Date.now();
+    while (Date.now() - start < duration) {}
+  };
+
+  app.get('/', (req, res) => {
+    doSomething(5000);
+    res.send('hej hej!');
+  });
+
+  app.get('/fast', (req, res) => {
+    doSomething(0);
+    res.send('hej hej Fast!');
+  });
+
+  app.listen('3000');
+} else {
+  console.log('Master');
+  cluster.fork();
+}
