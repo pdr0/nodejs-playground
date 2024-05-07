@@ -1,17 +1,21 @@
-const fs = require('fs');
+const express = require('express');
+const crypto = require('crypto');
+const app = express();
+const { Worker } = require('worker_threads');
 
-const params = [...process.argv].slice(2).map(n => parseInt(n));
+app.get('/', (req, res) => {
+  const worker = new Worker('./worker.js');
 
-const sum = (...numbers) => {
-    numbers.forEach((number, index) => {
-        if (index > 0) {
-            numbers[0] += number
-        }
-    });
-    return numbers[0]
-};
+  worker.on('message', function (message) {
+    console.log(message);
+    res.send('' + message);
+  });
 
-const result = sum(...params);
+  worker.postMessage('start!');
+});
 
-fs.writeFileSync('./logs/results.txt', result);
-console.log(result);
+app.get('/fast', (req, res) => {
+  res.send('This was fast!');
+});
+
+app.listen(3000);
